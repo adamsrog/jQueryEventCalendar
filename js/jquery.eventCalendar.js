@@ -329,7 +329,12 @@
 							eventHour = eventTime[0],
 							eventMinute = eventTime[1],
 							eventSeconds = eventTime[2],
+							eventAMPM = 'am',
 							eventDate = new Date(eventYear, eventMonth, eventDay, eventHour, eventMinute, eventSeconds);
+						if (eventHour > 12) {
+							eventHour -= 12;
+							eventAMPM = 'pm';
+						}
 					} else {
 						var eventDate = new Date(parseInt(event.date)),
 							eventYear = eventDate.getFullYear(),
