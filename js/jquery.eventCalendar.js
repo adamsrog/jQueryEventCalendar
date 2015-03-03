@@ -337,8 +337,12 @@
 							eventDay = eventDate.getDate(),
 							eventMonthToShow = eventMonth + 1,
 							eventHour = eventDate.getHours(),
-							eventMinute = eventDate.getMinutes();
-
+							eventMinute = eventDate.getMinutes(),
+							eventAMPM = 'am';
+						if (eventHour > 12) {
+							eventHour -= 12;
+							eventAMPM = 'pm';
+						}
 					}
 
 					if (parseInt(eventMinute) <= 9) {
@@ -365,7 +369,7 @@
 									} else {
 										var eventTitle = '<span class="eventTitle">'+event.title+'</span>';
 									}
-									events.push('<li id="' + key + '" class="'+event.type+'"><time datetime="'+eventDate+'"><em>' + eventStringDate + '</em><small>'+eventHour+":"+eventMinute+'</small></time>'+eventTitle+'<p class="eventDesc ' + eventDescClass + '">' + event.description + '</p></li>');
+									events.push('<li id="' + key + '" class="'+event.type+'"><time datetime="'+eventDate+'"><em>' + eventStringDate + '</em><small>'+eventHour+":"+eventMinute+eventAMPM+'</small></time>'+eventTitle+'<p class="eventDesc ' + eventDescClass + '">' + event.description + '</p></li>');
 									i++;
 								}
 						}
