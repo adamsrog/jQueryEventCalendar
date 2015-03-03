@@ -334,7 +334,7 @@
 						if (eventHour > 12) {
 							eventHour -= 12;
 							eventAMPM = 'pm';
-						} else if (eventHour === 0) {
+						} else if (eventHour === "00") {
 							eventHour = 12;
 						}
 					} else {
@@ -349,10 +349,9 @@
 						if (eventHour > 12) {
 							eventHour -= 12;
 							eventAMPM = 'pm';
-						} else if (eventHour === 0) {
+						} else if (eventHour === "00") {
 							eventHour = 12;
 						}
-
 					}
 
 					if (parseInt(eventMinute) <= 9) {
