@@ -334,6 +334,8 @@
 						if (eventHour > 12) {
 							eventHour -= 12;
 							eventAMPM = 'pm';
+						} else if (eventHour === 0) {
+							eventHour = 12;
 						}
 					} else {
 						var eventDate = new Date(parseInt(event.date)),
@@ -347,7 +349,10 @@
 						if (eventHour > 12) {
 							eventHour -= 12;
 							eventAMPM = 'pm';
+						} else if (eventHour === 0) {
+							eventHour = 12;
 						}
+
 					}
 
 					if (parseInt(eventMinute) <= 9) {
